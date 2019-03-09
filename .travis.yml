@@ -6,8 +6,9 @@ sudo: required
 dist: trusty
 osx_image: xcode10.1
 env:
-  - PYTHON_VERSION=3.7.2
-  - SWIFT_VERSION=5.0-DEVELOPMENT-SNAPSHOT-2019-03-06-a
+  global:
+    - PYTHON_VERSION=3.7.2
+    - SWIFT_VERSION=5.0-DEVELOPMENT-SNAPSHOT-2019-03-06-a
 before_install: |
   if [ "$TRAVIS_OS_NAME" == "osx" ]; then
     brew update
