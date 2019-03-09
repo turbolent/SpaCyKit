@@ -5,6 +5,12 @@ import Foundation
 
 final class SpaCyKitTests: XCTestCase {
 
+    override class func setUp() {
+        super.setUp()
+
+        PythonLibrary.useVersion(3)
+    }
+
     func testWithParser() {
         let language = Language.load(name: "en")
         XCTAssertEqual(language.pipeNames, ["tagger", "parser", "ner"])
