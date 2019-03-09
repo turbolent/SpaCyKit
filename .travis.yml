@@ -1,6 +1,5 @@
 os: linux
-language: generic
-sudo: required
+language: python
 dist: xenial
 env:
   - SWIFT_VERSION=5.0-DEVELOPMENT-SNAPSHOT-2019-03-06-a
