@@ -1,24 +1,9 @@
-os:
-  - linux
-  - osx
+os: linux
 language: generic
 sudo: required
-dist: trusty
-osx_image: xcode10.1
+dist: xenial
 env:
-  global:
-    - PYTHON_VERSION=3.7.2
-    - SWIFT_VERSION=5.0-DEVELOPMENT-SNAPSHOT-2019-03-06-a
-before_install: |
-  if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-    brew update
-    # setup python
-    brew outdated pyenv || brew upgrade pyenv
-    pyenv install "$PYTHON_VERSION"
-    eval "$(pyenv init -)"
-    pyenv global "$PYTHON_VERSION"
-  fi
-
+  - SWIFT_VERSION=5.0-DEVELOPMENT-SNAPSHOT-2019-03-06-a
 install:
   - eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
   - pip3 install spacy
